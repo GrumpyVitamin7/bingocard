@@ -1,0 +1,101 @@
+
+ /* .Numbers button {
+	border: none;
+	text-align: center;
+	text-decoration: none;
+	font-size: 24px;
+	transition-duration: 0.2s;
+	background-color: white;
+	color: black;
+	border: 2px solid green;
+	height: 50px;
+	width: 50px;
+	margin-left: 2px;
+	margin-right: 2px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+.Numbers button:hover {
+	background-color: green;
+	color: white;
+}
+.Numbers {
+	margin-top: 20px;
+	text-align: center;
+}
+#bingo {
+	text-align: center;
+	margin-top: 20px;
+}
+#bingo h1 {
+	font-size: 50px;
+	display: inline;
+	margin-left: 5px;
+	margin-right: 5px;
+	color: rgb(0, 217, 255);
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.selector button {
+	margin-right: 6px;
+	margin-left: 6px;
+	background-color: green;
+	color: white;
+	border-radius: 30%;
+	width: 1cm;
+	height: 1cm;
+	font-size: x-large;
+}
+ */
+
+/* body { 
+    text-align: center;
+    font-family: Verdana, sans-serif; 
+    background: #4b555b;
+}
+
+th, td {
+    border: 2.5px solid black;
+    text-align: center;
+}
+
+.square {
+    font-size: 20px;
+	background-color:#ffffff;
+	width: 100%;
+	padding: 20px;
+	border: none;
+}
+
+#bingo-card {
+    margin: 0 auto;
+    text-align: center;
+    width: 2em;
+    height: 2em;
+    border-collapse: collapse;
+    background: #d3d3d3;
+}
+
+.header {
+    background: #f44242;
+    font-size: 20px;
+} */
+
+body { 
+    text-align: center;
+    font-family: Verdana, sans-serif; 
+    background: #43411f;
+}
+
+h1 {
+	font-size: 50px;
+	display: inline;
+	margin-left: 5px;
+	margin-right: 5px;
+	color: rgb(0, 217, 255);
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+th, td {
+    border: 2.5px solid rgb(67, 142, 116);
+    text-align: center;
+}

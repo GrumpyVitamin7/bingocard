@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo Card</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./MyBingoCard.js"></script>
+</head>
+<body>
+    <input type="button" value="Generate a Card" onclick="generateCard()" />
+
+    <div id="bingoHead">
+        <h1 id="b">B</h1>
+        <h1 id="i">I</h1>
+        <h1 id="n">N</h1>
+        <h1 id="g">G</h1>
+        <h1 id="o">O</h1>
+    </div>
+
+    <form name="rn">
+        <input class="textId" type="text" id="tb" name="tb" />
+        <input
+          id="buttonId"
+          type="button"
+          value="Random Number!"
+          onclick="Random();"
+        />
+      </form>
+    <!-- <div id ="bingoContent"> -->
+    <!-- <h1 id="ButtonsPressed"></h1> -->
+    <!-- <div class="Numbers"> -->
+		<!-- <button id="btn1" onclick="Clicked('btn1')"></button>
+		<button id="btn2" onclick="Clicked('btn2')"></button>
+		<button id="btn3" onclick="Clicked('btn3')"></button>
+		<button id="btn4" onclick="Clicked('btn4')"></button>
+		<button id="btn5" onclick="Clicked('btn5')"></button>
+		<br />
+		<button id="btn6" onclick="Clicked('btn6')"></button>
+		<button id="btn7" onclick="Clicked('btn7')"></button>
+		<button id="btn8" onclick="Clicked('btn8')"></button>
+		<button id="btn9" onclick="Clicked('btn9')"></button>
+		<button id="btn10" onclick="Clicked('btn10')"></button>
+		<br />
+		<button id="btn11" onclick="Clicked('btn11')"></button>
+		<button id="btn12" onclick="Clicked('btn12')"></button>
+		<button id="btn13" onclick="Clicked('btn13')"></button>
+		<button id="btn14" onclick="Clicked('btn14')"></button>
+		<button id="btn15" onclick="Clicked('btn15')"></button>
+		<br />
+		<button id="btn16" onclick="Clicked('btn16')"></button>
+		<button id="btn17" onclick="Clicked('btn17')"></button>
+		<button id="btn18" onclick="Clicked('btn18')"></button>
+		<button id="btn19" onclick="Clicked('btn19')"></button>
+		<button id="btn20" onclick="Clicked('btn20')"></button>
+		<br />
+		<button id="btn21" onclick="Clicked('btn21')"></button>
+		<button id="btn22" onclick="Clicked('btn22')"></button>
+		<button id="btn23" onclick="Clicked('btn23')"></button>
+		<button id="btn24" onclick="Clicked('btn24')"></button>
+		<button id="btn25" onclick="Clicked('btn25')"></button>
+        <br />
+		<button id="btn26" onclick="Clicked('btn26')"></button>
+		<button id="btn27" onclick="Clicked('btn27')"></button>
+		<button id="btn28" onclick="Clicked('btn28')"></button>
+		<button id="btn29" onclick="Clicked('btn29')"></button>
+		<button id="btn30" onclick="Clicked('btn30')"></button>
+        <br />
+		<button id="btn31" onclick="Clicked('btn31')"></button>
+		<button id="btn32" onclick="Clicked('btn32')"></button>
+		<button id="btn33" onclick="Clicked('btn33')"></button>
+		<button id="btn34" onclick="Clicked('btn34')"></button>
+		<button id="btn35" onclick="Clicked('btn35')"></button>
+        <br />
+		<button id="btn36" onclick="Clicked('btn36')"></button>
+		<button id="btn37" onclick="Clicked('btn37')"></button>
+		<button id="btn38" onclick="Clicked('btn38')"></button>
+		<button id="btn39" onclick="Clicked('btn39')"></button>
+		<button id="btn40" onclick="Clicked('btn40')"></button>
+        <br />
+		<button id="btn41" onclick="Clicked('btn41')"></button>
+		<button id="btn42" onclick="Clicked('btn42')"></button>
+		<button id="btn43" onclick="Clicked('btn43')"></button>
+		<button id="btn44" onclick="Clicked('btn44')"></button>
+		<button id="btn45" onclick="Clicked('btn45')"></button>
+        <br />
+		<button id="btn46" onclick="Clicked('btn46')"></button>
+		<button id="btn47" onclick="Clicked('btn47')"></button>
+		<button id="btn48" onclick="Clicked('btn48')"></button>
+		<button id="btn49" onclick="Clicked('btn49')"></button>
+		<button id="btn50" onclick="Clicked('btn50')"></button>
+        <br />
+		<button id="btn51" onclick="Clicked('btn51')"></button>
+		<button id="btn52" onclick="Clicked('btn52')"></button>
+		<button id="btn53" onclick="Clicked('btn53')"></button>
+		<button id="btn54" onclick="Clicked('btn54')"></button>
+		<button id="btn55" onclick="Clicked('btn55')"></button>
+        <br />
+		<button id="btn56" onclick="Clicked('btn56')"></button>
+		<button id="btn57" onclick="Clicked('btn57')"></button>
+		<button id="btn58" onclick="Clicked('btn58')"></button>
+		<button id="btn59" onclick="Clicked('btn59')"></button>
+		<button id="btn60" onclick="Clicked('btn60')"></button>
+        <br />
+		<button id="btn61" onclick="Clicked('btn61')"></button>
+		<button id="btn62" onclick="Clicked('btn62')"></button>
+		<button id="btn63" onclick="Clicked('btn63')"></button>
+		<button id="btn64" onclick="Clicked('btn64')"></button>
+		<button id="btn65" onclick="Clicked('btn65')"></button>
+        <br />
+		<button id="btn66" onclick="Clicked('btn66')"></button>
+		<button id="btn67" onclick="Clicked('btn67')"></button>
+		<button id="btn68" onclick="Clicked('btn68')"></button>
+		<button id="btn69" onclick="Clicked('btn69')"></button>
+		<button id="btn70" onclick="Clicked('btn70')"></button>
+        <br />
+		<button id="btn71" onclick="Clicked('btn71')"></button>
+		<button id="btn72" onclick="Clicked('btn72')"></button>
+		<button id="btn73" onclick="Clicked('btn73')"></button>
+		<button id="btn74" onclick="Clicked('btn74')"></button>
+		<button id="btn75" onclick="Clicked('btn75')"></button>
+        <br />
+		<button id="btn76" onclick="Clicked('btn76')"></button> -->
+        <!-- <table id="bingo-card">
+            <tr>
+                <th class="header">B</th>
+                <th class="header">I</th>
+                <th class="header">N</th>
+                <th class="header">G</th>
+                <th class="header">O</th>
+            </tr>
+            <tr>
+                <td><input id="sq0" class="square" type="button" value="&nbsp;" onclick="markSquare('sq0')"></td>
+                <td><input id="sq1" class="square" type="button" value="&nbsp;" onclick="markSquare('sq1')"></td>
+                <td><input id="sq2" class="square" type="button" value="&nbsp;" onclick="markSquare('sq2')"></td>
+                <td><input id="sq3" class="square" type="button" value="&nbsp;" onclick="markSquare('sq3')"></td>
+                <td><input id="sq4" class="square" type="button" value="&nbsp;" onclick="markSquare('sq4')"></td>
+            </tr>
+            <tr>
+                <td><input id="sq5" class="square" type="button" value="&nbsp;" onclick="markSquare('sq5')"></td>
+                <td><input id="sq6" class="square" type="button" value="&nbsp;" onclick="markSquare('sq6')"></td>
+                <td><input id="sq7" class="square" type="button" value="&nbsp;" onclick="markSquare('sq7')"></td>
+                <td><input id="sq8" class="square" type="button" value="&nbsp;" onclick="markSquare('sq8')"></td>
+                <td><input id="sq9" class="square" type="button" value="&nbsp;" onclick="markSquare('sq9')"></td>
+            </tr>
+            <tr>
+                <td><input id="sq10" class="square" type="button" value="&nbsp;" onclick="markSquare('sq10')"></td>
+                <td><input id="sq11" class="square" type="button" value="&nbsp;" onclick="markSquare('sq11')"></td>
+                <td><input id="sq12" class="square" type="button" value="FREE" onclick="markSquare('sq12')"></td>
+                <td><input id="sq13" class="square" type="button" value="&nbsp;" onclick="markSquare('sq13')"></td>
+                <td><input id="sq14" class="square" type="button" value="&nbsp;" onclick="markSquare('sq14')"></td>
+            </tr>
+            <tr>
+                <td><input id="sq15" class="square" type="button" value="&nbsp;" onclick="markSquare('sq15')"></td>
+                <td><input id="sq16" class="square" type="button" value="&nbsp;" onclick="markSquare('sq16')"></td>
+                <td><input id="sq17" class="square" type="button" value="&nbsp;" onclick="markSquare('sq17')"></td>
+                <td><input id="sq18" class="square" type="button" value="&nbsp;" onclick="markSquare('sq18')"></td>
+                <td><input id="sq19" class="square" type="button" value="&nbsp;" onclick="markSquare('sq19')"></td>
+            </tr>
+            <tr>
+                <td><input id="sq20" class="square" type="button" value="&nbsp;" onclick="markSquare('sq20')"></td>
+                <td><input id="sq21" class="square" type="button" value="&nbsp;" onclick="markSquare('sq21')"></td>
+                <td><input id="sq22" class="square" type="button" value="&nbsp;" onclick="markSquare('sq22')"></td>
+                <td><input id="sq23" class="square" type="button" value="&nbsp;" onclick="markSquare('sq23')"></td>
+                <td><input id="sq24" class="square" type="button" value="&nbsp;" onclick="markSquare('sq24')"></td>
+            </tr>
+            <tr>
+                <td><input id="sq25" class="square" type="button" value="&nbsp;" onclick="markSquare('sq20')"></td>
+                <td><input id="sq26" class="square" type="button" value="&nbsp;" onclick="markSquare('sq21')"></td>
+                <td><input id="sq27" class="square" type="button" value="&nbsp;" onclick="markSquare('sq22')"></td>
+                <td><input id="sq28" class="square" type="button" value="&nbsp;" onclick="markSquare('sq23')"></td>
+                <td><input id="sq29" class="square" type="button" value="&nbsp;" onclick="markSquare('sq24')"></td>
+            </tr>
+            <tr>
+                <td><input id="sq30" class="square" type="button" value="&nbsp;" onclick="markSquare('sq20')"></td>
+                <td><input id="sq31" class="square" type="button" value="&nbsp;" onclick="markSquare('sq21')"></td>
+                <td><input id="sq32" class="square" type="button" value="&nbsp;" onclick="markSquare('sq22')"></td>
+                <td><input id="sq33" class="square" type="button" value="&nbsp;" onclick="markSquare('sq23')"></td>
+                <td><input id="sq34" class="square" type="button" value="&nbsp;" onclick="markSquare('sq24')"></td>
+            </tr>
+            <tr>
+                <td><input id="sq35" class="square" type="button" value="&nbsp;" onclick="markSquare('sq20')"></td>
+                <td><input id="sq36" class="square" type="button" value="&nbsp;" onclick="markSquare('sq21')"></td>
+                <td><input id="sq37" class="square" type="button" value="&nbsp;" onclick="markSquare('sq22')"></td>
+                <td><input id="sq38" class="square" type="button" value="&nbsp;" onclick="markSquare('sq23')"></td>
+                <td><input id="sq39" class="square" type="button" value="&nbsp;" onclick="markSquare('sq24')"></td>
+            </tr>
+            <tr>
+                <td><input id="sq40" class="square" type="button" value="&nbsp;" onclick="markSquare('sq20')"></td>
+                <td><input id="sq41" class="square" type="button" value="&nbsp;" onclick="markSquare('sq21')"></td>
+                <td><input id="sq42" class="square" type="button" value="&nbsp;" onclick="markSquare('sq22')"></td>
+                <td><input id="sq43" class="square" type="button" value="&nbsp;" onclick="markSquare('sq23')"></td>
+                <td><input id="sq44" class="square" type="button" value="&nbsp;" onclick="markSquare('sq24')"></td>
+            </tr>
+            <tr>
+                <td><input id="sq45" class="square" type="button" value="&nbsp;" onclick="markSquare('sq20')"></td>
+                <td><input id="sq46" class="square" type="button" value="&nbsp;" onclick="markSquare('sq21')"></td>
+                <td><input id="sq47" class="square" type="button" value="&nbsp;" onclick="markSquare('sq22')"></td>
+                <td><input id="sq48" class="square" type="button" value="&nbsp;" onclick="markSquare('sq23')"></td>
+                <td><input id="sq49" class="square" type="button" value="&nbsp;" onclick="markSquare('sq24')"></td>
+            </tr>
+            <tr>
+                <td><input id="sq50" class="square" type="button" value="&nbsp;" onclick="markSquare('sq20')"></td>
+                <td><input id="sq51" class="square" type="button" value="&nbsp;" onclick="markSquare('sq21')"></td>
+                <td><input id="sq52" class="square" type="button" value="&nbsp;" onclick="markSquare('sq22')"></td>
+                <td><input id="sq53" class="square" type="button" value="&nbsp;" onclick="markSquare('sq23')"></td>
+                <td><input id="sq54" class="square" type="button" value="&nbsp;" onclick="markSquare('sq24')"></td>
+            </tr>
+            <tr>
+                <td><input id="sq55" class="square" type="button" value="&nbsp;" onclick="markSquare('sq20')"></td>
+                <td><input id="sq56" class="square" type="button" value="&nbsp;" onclick="markSquare('sq21')"></td>
+                <td><input id="sq57" class="square" type="button" value="&nbsp;" onclick="markSquare('sq22')"></td>
+                <td><input id="sq58" class="square" type="button" value="&nbsp;" onclick="markSquare('sq23')"></td>
+                <td><input id="sq59" class="square" type="button" value="&nbsp;" onclick="markSquare('sq24')"></td>
+            </tr>
+            <tr>
+                <td><input id="sq60" class="square" type="button" value="&nbsp;" onclick="markSquare('sq20')"></td>
+                <td><input id="sq61" class="square" type="button" value="&nbsp;" onclick="markSquare('sq21')"></td>
+                <td><input id="sq62" class="square" type="button" value="&nbsp;" onclick="markSquare('sq22')"></td>
+                <td><input id="sq63" class="square" type="button" value="&nbsp;" onclick="markSquare('sq23')"></td>
+                <td><input id="sq64" class="square" type="button" value="&nbsp;" onclick="markSquare('sq24')"></td>
+            </tr>
+            <tr>
+                <td><input id="sq65" class="square" type="button" value="&nbsp;" onclick="markSquare('sq20')"></td>
+                <td><input id="sq67" class="square" type="button" value="&nbsp;" onclick="markSquare('sq21')"></td>
+                <td><input id="sq68" class="square" type="button" value="&nbsp;" onclick="markSquare('sq22')"></td>
+                <td><input id="sq69" class="square" type="button" value="&nbsp;" onclick="markSquare('sq23')"></td>
+                <td><input id="sq70" class="square" type="button" value="&nbsp;" onclick="markSquare('sq24')"></td>
+            </tr>
+        </table> -->
+    <!-- </div> -->
+
+    
+</body>
+</html>
