@@ -64,43 +64,137 @@
 
 
 
-let row = 4;
-let column = 19;
+// let row = 4;
+// let column = 19;
 
-function generateCard() {
-    // creates a <table> element and a <tbody> element
-    const tbl = document.createElement("table");
-    const tblBody = document.createElement("tbody");
+// function generateCard() {
+//     // creates a <table> element and a <tbody> element
+//     const tbl = document.createElement("table");
+//     const tblBody = document.createElement("tbody");
   
-    // creating all cells
-    for (let i = 0; i < row; i++) {
-      // creates a table row
-      const row = document.createElement("tr");
+//     // creating all cells
+//     for (let i = 0; i < row; i++) {
+//       // creates a table row
+//       const row = document.createElement("tr");
   
-      for (let j = 0; j < column; j++) {
-        // Create a <td> element and a text node, make the text
-        // node the contents of the <td>, and put the <td> at
-        // the end of the table row
-        const cell = document.createElement("td");
-        const cellText = document.createTextNode(`cell in row ${i}, column ${j}`);
-        cell.appendChild(cellText);
-        row.appendChild(cell);
-      }
+//       for (let j = 0; j < column; j++) {
+//         // Create a <td> element and a text node, make the text
+//         // node the contents of the <td>, and put the <td> at
+//         // the end of the table row
+//         const cell = document.createElement("td");
+//         const cellText = document.createTextNode(`cell in row ${i}, column ${j}`);
+//         cell.appendChild(cellText);
+//         row.appendChild(cell);
+//       }
   
-      // add the row to the end of the table body
-      tblBody.appendChild(row);
-    }
+//       // add the row to the end of the table body
+//       tblBody.appendChild(row);
+//     }
   
-    // put the <tbody> in the <table>
-    tbl.appendChild(tblBody);
-    // appends <table> into <body>
-    document.body.appendChild(tbl);
-    // sets the border attribute of tbl to '2'
-    tbl.setAttribute("border", "2");
+//     // put the <tbody> in the <table>
+//     tbl.appendChild(tblBody);
+//     // appends <table> into <body>
+//     document.body.appendChild(tbl);
+//     // sets the border attribute of tbl to '2'
+//     tbl.setAttribute("border", "2");
+//   }
+  
+
+//   function Random() {
+//     var rnd = Math.floor(Math.random() * 76);
+//     document.getElementById("tb").value = rnd;
+//   }
+
+//   const bingoBoard = document.getElementById("bingoBoard")
+//         for (let i = 0; i < 76; i++) {
+//             const cells = document.createElement("div")
+//             cells.innerHTML = i + 1;
+
+//             bingoBoard.appendChild(cells)
+//         }
+
+
+const generateMainBoard = function () {
+  const board = document.querySelector(".main-board")
+  for (let i = 0; i < 76; i++) {
+    board.innerHTML += `<div class='cell'>${i + 1}</div>`
   }
-  
+}
 
-  function Random() {
-    var rnd = Math.floor(Math.random() * 76);
-    document.getElementById("tb").value = rnd;
+//create an array in range [1,...76]
+const fillArray = function () {
+  const arr = []
+  for (let i = 0; i < 76; i++) {
+    arr.push(i + 1)
+  }
+  return arr
+}
+
+ /**
+     * Example
+     * numbers = [1, 2, 3, 4, 5]
+     *                  ^
+     * randIndex = 2
+     * random = 3
+     * after removing from array -> [1, 2, 4, 5]
+     */
+  const getRandomNum = function (numbers) {
+    // generate a random index in the range of the array length
+    const randIndex = Math.floor(Math.random() * numbers.length)
+    // get the element in the array under that index
+    const random = numbers[randIndex]
+    // remove the element from the array
+    numbers.splice(randIndex, 1)
+
+    return random
+  }
+
+  const generateRandNumber = function (numbers) {
+    const random = getRandomNum(numbers)
+
+    const randNumDiv = document.getElementById("randNum")
+    if (random !== undefined) {
+      randNumDiv.innerText = "Number: " + random
+    } else {
+      randNumDiv.innerText = "Game is finished"
+    }
+
+    const cells = document.querySelectorAll(".main-board .cell")
+    cells[random - 1].classList.add("highlight")
+    // we use random - 1 to have a 0 based index to use to acces the cells array 
+
+    const userCells = document.querySelectorAll(".user-board .cell")
+    for (let cell of userCells) {
+      if (parseInt(cell.innerText) === random) {
+        cell.classList.add("highlight")
+      }
+    }
+  }
+
+  const generateUserBoards = function () {
+    const usersNumber = document.getElementById("usersNumber").value
+    const container = document.querySelector(".container")
+    if (parseInt(usersNumber) > 0) {
+      for (let i = 0; i < parseInt(usersNumber); i++) {
+        const numbers = fillArray()
+        const board = document.createElement("div")
+        board.className = "board user-board"
+        for (let i = 0; i < 24; i++) {
+          const random = getRandomNum(numbers)
+          board.innerHTML += `<div class='cell'>${random}</div>`
+        }
+        container.appendChild(board)
+      }
+    }
+  }
+
+  window.onload = function () {
+    generateMainBoard()
+    const randBtn = document.getElementById("randBtn")
+    const numbers = fillArray()
+    randBtn.addEventListener("click", function () {
+      generateRandNumber(numbers)
+    })
+    const userBoardBtn = document.getElementById("userBoardBtn")
+    userBoardBtn.addEventListener("click", generateUserBoards)
   }
